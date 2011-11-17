@@ -5,7 +5,7 @@ App.Events = (function(lng, app, undefined) {
     });
 
     lng.Dom.Event.bind('.choices a', 'TAP', function(event) {
-		app.nextTrack();
+		app.Core.nextTrack();
     });
 
     return {

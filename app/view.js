@@ -17,21 +17,7 @@ App.View = (function(lng, app, undefined) {
 
     //Auto-start
     var _init = (function() {
-        //app.music('assets/sounds/smb_overworld.mp3');
-        lng.Router.section('about');
-        return false;
 
-        var track = app.Data.track(2);
-        loadTrack();
-
-        //setTimeout(function(){ app.View.progress('game', '99'); }, 100);
-        //setTimeout(function(){ app.View.loadQuiz(); }, 300);
-        //setTimeout(function(){ app.nextMusic(); }, 2000);
-        //return false;
-
-        //setTimeout(function(){ app.View.progress('loading', '30'); }, 1000);
-        //setTimeout(function(){ app.View.progress('loading', '100'); }, 2000);
-        //setTimeout(function(){ lng.Router.section('main'); }, 3000);
     })();
 
     return{

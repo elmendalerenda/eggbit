@@ -14,24 +14,9 @@ var App = (function(lng, undefined) {
         lng.Sugar.Sound.background(music_url);
     };
 
-    var checkChoice = function() {
-        //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
-    };
-
-    var nextTrack = function() {
-        App.View.unloadTrack();
-        //@ToDo >> Tenemos que cargar la siguiente canción
-        var track = App.Data.track(1);
-        console.error(track);
-        //
-        setTimeout(function(){ App.View.loadTrack(); }, 1000);
-    };
-
     return {
         sound: sound,
-        music: music,
-        checkChoice: checkChoice,
-        nextTrack: nextTrack
+        music: music
     };
 
 })(LUNGO);
