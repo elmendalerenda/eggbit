@@ -18,7 +18,7 @@ App.View = (function(lng, app, undefined) {
     //Auto-start
     var _init = (function() {
         //app.music('assets/sounds/smb_overworld.mp3');
-        lng.Router.section('main');
+        lng.Router.section('about');
         return false;
 
         var track = app.Data.track(2);
