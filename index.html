@@ -30,7 +30,7 @@
     <section id="loading">
         <article class="splash">
             <div class="onMiddle">
-                <h1><img src="assets/images/icon-logo.png">eggBit</h1>
+                <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
 
                 <div id="loading" class="progress"><div class="value"></div></div>
             </div>
@@ -38,17 +38,21 @@
     </section>
 
     <section id="main">
-        <header data-title="eggBit">
-            <a href="#game" data-target="section" class="button red onright">Next</a>
-        </header>
-
         <article>
             <div class="sky"></div>
             <div class="middle-ground" id="middle"></div>
             <div class="ground"></div>
 
-            <div class="content">
-
+            <div class="content menu">
+                <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
+                <nav class="game options">
+                    <a data-icon="mario">New game</a>
+                    <a data-icon="mario">Multi player</a>
+                    <a data-icon="mario">Highscores</a>
+                    <a data-icon="mario">Highscores</a>
+                    <a data-icon="mario">About...</a>
+                </nav>
+                <div class="copyright">Copyright 2011. Tapquo Inc.</div>
             </div>
         </article>
     </section>
@@ -75,7 +79,7 @@
                         <div class="result"></div>
                     </div>
 
-                    <form class="onBottom options">
+                    <form class="onBottom choices">
                         <a href="#" id="btn_choice_1" class="button red big">Choice nº1</a>
                         <a href="#" id="btn_choice_2" class="button blue big">Choice nº2</a>
                         <a href="#" id="btn_choice_3" class="button green big">Choice nº3</a>
@@ -99,6 +103,7 @@
 
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
+    <script src="app/core.js"></script>
     <script src="app/data.js"></script>
     <script src="app/events.js"></script>
     <script src="app/services.js"></script>

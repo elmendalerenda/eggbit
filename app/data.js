@@ -11,7 +11,6 @@ App.Data = (function(lng, app, undefined) {
 			music_url: 'http://'
 		};
 
-
 		return mockTrack;
 	};
 

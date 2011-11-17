@@ -4,7 +4,7 @@ App.Events = (function(lng, app, undefined) {
         app.sound('assets/sounds/button.wav');
     });
 
-    lng.Dom.Event.bind('.options a', 'TAP', function(event) {
+    lng.Dom.Event.bind('.choices a', 'TAP', function(event) {
 		app.nextTrack();
     });
 

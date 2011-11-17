@@ -18,6 +18,8 @@ App.View = (function(lng, app, undefined) {
     //Auto-start
     var _init = (function() {
         //app.music('assets/sounds/smb_overworld.mp3');
+        lng.Router.section('main');
+        return false;
 
         var track = app.Data.track(2);
         loadTrack();
@@ -27,9 +29,9 @@ App.View = (function(lng, app, undefined) {
         //setTimeout(function(){ app.nextMusic(); }, 2000);
         //return false;
 
-        setTimeout(function(){ app.View.progress('loading', '30'); }, 1000);
-        setTimeout(function(){ app.View.progress('loading', '100'); }, 2000);
-        setTimeout(function(){ lng.Router.section('main'); }, 3000);
+        //setTimeout(function(){ app.View.progress('loading', '30'); }, 1000);
+        //setTimeout(function(){ app.View.progress('loading', '100'); }, 2000);
+        //setTimeout(function(){ lng.Router.section('main'); }, 3000);
     })();
 
     return{
