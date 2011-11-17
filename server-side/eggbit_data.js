@@ -1,4 +1,4 @@
-export.resources = {
+exports.resources = {
     1: {
         name: "Super Mario Bros 3",
         year: "1988",
