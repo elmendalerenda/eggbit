@@ -47,17 +47,17 @@
                 <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
                 <nav class="game options">
                     <a data-icon="mario">New game</a>
-                    <a data-icon="mario">Multi player</a>
-                    <a data-icon="mario">Highscores</a>
-                    <a data-icon="mario">About...</a>
+                    <a data-icon="tv">Multi player</a>
+                    <a href="#highscores" data-target="section" data-icon="star">Highscores</a>
+                    <a href="#about" data-target="section" data-icon="human">About...</a>
                 </nav>
-                <div class="copyright">Copyright 2011. Tapquo Inc.</div>
+                <div class="copyright small">Copyright 2011. Tapquo Inc.</div>
             </div>
         </article>
     </section>
 
     <section id="game">
-        <header data-title="Game" data-back="home blue">
+        <header data-title="Game" data-back="blue bomb">
            <div class="life">
                 <span data-icon="heart die"></span>
                 <span data-icon="heart"></span>
@@ -89,7 +89,9 @@
     </section>
 
     <section id="highscores">
-        <header data-back="home blue"></header>
+        <header data-back="blue bomb">
+            <h1 class="title">WorldTop <span class="mark">Highscores</span></h1>
+        </header>
         <article>
             <div class="sky"></div>
             <div class="middle-ground" id="middle"></div>
@@ -102,19 +104,22 @@
     </section>
 
     <section id="about">
-        <header data-title="About nerds"></header>
+        <header data-back="blue bomb">
+            <h1 class="title">About the <span class="mark">nerds</span></h1>
+        </header>
         <article>
             <div class="sky"></div>
             <div class="middle-ground" id="middle"></div>
             <div class="ground"></div>
 
             <div class="content">
+                <small class="small">Put any two of these folks in a room together and you'll get something great in return.</small>
                 <a href="http://twitter.com/soyjavi" target="_blank"  class="profile">
                     <img src="assets/images/profile-soyjavi.jpg">
                     <div class="info">
                         <strong>Javier Jimenez</strong>
-                        <small>CEO & #HTML5 evangelist</small>
-                        <small>Tapquo Inc.</small>
+                        <small class="small mark">CEO & #HTML5 evangelist</small>
+                        <small class="small">Tapquo Inc.</small>
                     </div>
                 </a>
 
@@ -122,22 +127,20 @@
                     <img src="assets/images/profile-pasku.jpg">
                     <div class="info">
                         <strong>Guillermo pascual</strong>
-                        <small>JavaScript Ninja</small>
-                        <small>Tapquo Inc.</small>
+                        <small class="small mark">JavaScript Ninja</small>
+                        <small class="small">Tapquo Inc.</small>
                     </div>
                 </a>
 
                 <a href="http://twitter.com/elmendalerenda" target="_blank" class="profile">
                     <img src="assets/images/profile-elmendalerenda.jpg">
                     <div class="info">
-                        <strong>El menda lerenda</strong>
-                        <small>Ruby enthusiast</small>
-                        <small>BeCodeMyFriend</small>
+                        <strong>Miguel Fernandez</strong>
+                        <small class="small mark">NodeJS adopter & agilist</small>
+                        <small class="small">BeCodeMyFriend</small>
                     </div>
                 </a>
             </div>
-
-
         </article>
     </section>
 
@@ -150,9 +153,11 @@
 
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
+    <script src="app/core.js"></script>
     <script src="app/data.js"></script>
     <script src="app/events.js"></script>
     <script src="app/services.js"></script>
     <script src="app/view.js"></script>
+
 </body>
 </html>

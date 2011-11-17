@@ -1,14 +1,15 @@
 h1.logo{font-size:38px;height:72px;}
 h1.logo img{float:left;height:46px;margin:10px 5px 0px 0px;}
+.mark{color:#F9C845;}
 .sky{position:relative;z-index:2;height:160px;overflow:hidden;background:#353b6c url(../../images/app-skyline-night.png) repeat-x 350% 100%;}
 .middle-ground{position:relative;z-index:1;height:120px;background:#292230 url(../../images/app-hills.png) no-repeat 50% 100%;}
 .ground{position:absolute;z-index:1;left:0;right:0;bottom:0;top:365px;min-height:460px;overflow:hidden;}
 .content{position:absolute;width:auto;height:auto;margin:0 10px 10px;top:0;left:0;right:0;bottom:0;z-index:3;}
 .content.menu{margin-top:32px;}
-.content .small{font-size:8px;}
+.content .small{font-size:8px;line-height:18px;}
 .game{display:block;margin-top:16px;}
-.game.options a{height:48px;padding:0px;margin-bottom:6px;color:#fff;font-size:20px;line-height:48px;}
-.game.options .icon{height:48px;width:48px;float:left;margin-right:8px;font-size:32px;line-height:48px;}
+.game.options a{display:block;width:100%;height:48px;padding:0px;margin-bottom:6px;color:#fff;font-size:20px;line-height:48px;text-align:left;}
+.game.options .icon{height:48px;width:48px;float:left;margin-right:8px;font-size:32px;line-height:48px;text-align:center;}
 .copyright{width:100%;position:absolute;bottom:0px;text-align:center;}
 form{margin:0;}
 .onBottom{position:absolute;bottom:0;left:0;right:0;}
@@ -26,8 +27,7 @@ form{margin:0;}
 .music.error{-webkit-animation:storyboard-error 0.2s 5;}
 .music.success{-webkit-animation:storyboard-success 1s infinite;}
 .music img{width:164px;height:164px;}
-.profile{display:block;height:100px;margin-bottom:10px;}
+.profile{margin-top:10px;display:block;height:100px;}
 .profile img{height:92px;width:92px;border:4px solid #fff;float:left;margin-right:10px;}
-.profile .info{padding-top:16px;}
-.profile strong{display:block;font-size:12px;line-height:32px;}
-.profile small{display:block;font-size:8px;line-height:16px;}
+.profile strong{display:block;font-size:12px;line-height:32px;padding-top:12px;padding-bottom:4px;}
+.profile small{display:block;}
