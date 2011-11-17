@@ -1,0 +1,15 @@
+.sky{position:relative;z-index:2;height:160px;overflow:hidden;background:#353b6c url(../../images/app-skyline-night.png) repeat-x 350% 100%;}
+.middle-ground{position:relative;z-index:1;height:120px;background:#292230 url(../../images/app-hills.png) no-repeat 50% 100%;}
+.ground{position:absolute;z-index:1;left:0;right:0;bottom:0;top:365px;min-height:460px;overflow:hidden;}
+.content{position:absolute;width:auto;height:auto;margin:0 10px 10px;top:0;left:0;right:0;bottom:0;z-index:3;}
+form{margin:0;}
+.onBottom{position:absolute;bottom:0;left:0;right:0;}
+.onMiddle{height:auto;width:256px;margin-right:auto;margin-left:auto;display:block;text-align:center;}
+.life{float:right;margin-right:10px;}
+.life .icon{height:20px;color:#ff0038;font-size:24px;text-shadow:0px 2px #ffffff,0px -2px #ffffff,2px 0px #ffffff,#ffffff -2px 0px #ffffff;}
+.life .die{color:#ccc;}
+.progress{height:24px;border:2px solid #fff;}
+.progress .value{width:0%;height:100%;background:#f9c845 url(../../images/app-bg-egg.png);-webkit-transition:all 0.3s ease-in-out;}
+.music{width:164px;height:164px;margin:16px auto;font-size:92px;}
+.music.playing{-moz-box-shadow:0px 0px 10px #fff;-webkit-box-shadow:0px 0px 10px #fff;box-shadow:0px 0px 10px #fff;-webkit-animation:storyboard-playing 1s infinite;}
+.music img{width:164px;height:164px;}
