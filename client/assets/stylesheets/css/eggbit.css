@@ -9,7 +9,12 @@ form{margin:0;}
 .life .icon{height:20px;color:#ff0038;font-size:24px;text-shadow:0px 2px #ffffff,0px -2px #ffffff,2px 0px #ffffff,#ffffff -2px 0px #ffffff;}
 .life .die{color:#ccc;}
 .progress{height:24px;border:2px solid #fff;}
-.progress .value{width:0%;height:100%;background:#f9c845 url(../../images/app-bg-egg.png);-webkit-transition:all 0.3s ease-in-out;}
-.music{width:164px;height:164px;margin:16px auto;font-size:92px;}
-.music.playing{-moz-box-shadow:0px 0px 10px #fff;-webkit-box-shadow:0px 0px 10px #fff;box-shadow:0px 0px 10px #fff;-webkit-animation:storyboard-playing 1s infinite;}
+.progress .value{width:0%;height:100%;background:#f9c845 url(../../images/app-bg-egg.png);-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
+.quiz{height:320px;-webkit-transform-style:preserve-3d;opacity:0;-webkit-transform:translate3d(100%, 0, 0);-moz-transform:translate3d(100%, 0, 0);-ms-transform:translate3d(100%, 0, 0);-o-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);}
+.unload{-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;opacity:0;-webkit-transform:translate3d(-100%, 0, 0);-moz-transform:translate3d(-100%, 0, 0);-ms-transform:translate3d(-100%, 0, 0);-o-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);}
+.load{-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;opacity:1;-webkit-transform:translate3d(0%, 0, 0);-moz-transform:translate3d(0%, 0, 0);-ms-transform:translate3d(0%, 0, 0);-o-transform:translate3d(0%, 0, 0);transform:translate3d(0%, 0, 0);}
+.music{display:block;width:164px;height:164px;margin:16px auto;font-size:92px;-webkit-transform-style:preserve-3d;}
+.music.playing{-webkit-box-shadow:0px 0px 10px #ffffff;-moz-box-shadow:0px 0px 10px #ffffff;box-shadow:0px 0px 10px #ffffff;-webkit-animation:storyboard-playing 1s infinite;}
+.music.error{-webkit-animation:storyboard-error 0.2s 5;}
+.music.success{-webkit-animation:storyboard-success 1s infinite;}
 .music img{width:164px;height:164px;}

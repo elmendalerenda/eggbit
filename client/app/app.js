@@ -19,7 +19,10 @@ var App = (function(lng, undefined) {
     };
 
     var nextMusic = function() {
-        //@ToDo >> Pasar a la siguiente canción
+        App.View.unloadQuiz();
+        //@ToDo >> Tenemos que cargar la siguiente canción
+
+        setTimeout(function(){ App.View.loadQuiz(); }, 1000);
     };
 
     return {
