@@ -4,26 +4,23 @@ App.View = (function(lng, app, undefined) {
         lng.Dom.query('#' + progress_id + ' .progress .value').css('width', percent + '%');
     };
 
-    var nextQuiz = function() {
-
+    var unloadTrack = function() {
+        lng.Dom.query('.track').removeClass('load').addClass('unload');
     };
 
-    var unloadQuiz = function() {
-        lng.Dom.query('.quiz').removeClass('load').addClass('unload');
-    };
-
-    var loadQuiz = function(data) {
-        lng.Dom.query('.quiz').removeClass('unload');
+    var loadTrack = function(data) {
+        lng.Dom.query('.track').removeClass('unload');
         setTimeout(function(){
-            lng.Dom.query('.quiz').addClass('load');
+            lng.Dom.query('.track').addClass('load');
         }, 100);
     };
 
     //Auto-start
     var _init = (function() {
         //app.music('assets/sounds/smb_overworld.mp3');
-        //lng.Router.section('game');
 
+        var track = app.Data.track(2);
+        loadTrack();
 
         //setTimeout(function(){ app.View.progress('game', '99'); }, 100);
         //setTimeout(function(){ app.View.loadQuiz(); }, 300);
@@ -37,8 +34,8 @@ App.View = (function(lng, app, undefined) {
 
     return{
         progress: progress,
-        loadQuiz: loadQuiz,
-        unloadQuiz: unloadQuiz
+        loadTrack: loadTrack,
+        unloadTrack: unloadTrack
     }
 
 })(LUNGO, App);

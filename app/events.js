@@ -5,7 +5,7 @@ App.Events = (function(lng, app, undefined) {
     });
 
     lng.Dom.Event.bind('.options a', 'TAP', function(event) {
-		app.nextMusic();
+		app.nextTrack();
     });
 
     return {

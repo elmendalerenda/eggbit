@@ -18,18 +18,20 @@ var App = (function(lng, undefined) {
         //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
     };
 
-    var nextMusic = function() {
-        App.View.unloadQuiz();
+    var nextTrack = function() {
+        App.View.unloadTrack();
         //@ToDo >> Tenemos que cargar la siguiente canción
-
-        setTimeout(function(){ App.View.loadQuiz(); }, 1000);
+        var track = App.Data.track(1);
+        console.error(track);
+        //
+        setTimeout(function(){ App.View.loadTrack(); }, 1000);
     };
 
     return {
         sound: sound,
         music: music,
         checkChoice: checkChoice,
-        nextMusic: nextMusic
+        nextTrack: nextTrack
     };
 
 })(LUNGO);
