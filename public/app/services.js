@@ -1,7 +1,7 @@
 App.Services = (function(lng, app, undefined) {
 
-	var server_url = 'http://localhost:3000/';
-	//var server_url = 'http://eggbit.herokuapp.com/';
+	//var server_url = 'http://localhost:3000/';
+	var server_url = 'http://eggbit.herokuapp.com/';
 	var server_socket;
 
 	var checkVersion = function() {
