@@ -15,10 +15,10 @@ App.Services = (function(lng, app, undefined) {
 		lng.Sugar.Growl.show('Loading', 'monkey', true);
 
 		lng.Service.get(server_url + 'game/new', {}, function(response) {
-			var tracks = response.tracks;
-			if (tracks.length) {
-				console.error(tracks);
-				app.game(tracks);
+			var game = response.game;
+			if (game.length) {
+				console.error(game);
+				app.game(game);
 			}
 		});
 	};
