@@ -2,9 +2,9 @@ exports.createGame = function() {
     var game = [];
     var questions = [];
 
-    for (var i = 0; i < 20; i += 1) {
+    for (var i = 0; i < 3; i += 1) {
         
-        var id = randomInAnArray(questions)
+        var id = randomInAnArray1(questions)
         questions.push(id);
 
         var answers = [id];
@@ -31,7 +31,18 @@ var randomInAnArray = function(list) {
     var numQuestions = 5;
     var number = Math.floor(Math.random() * numQuestions);
 
-    while (list.indexOf(number) > -1) {
+    while (list.indexOf(number) > -1 || number ===0) {
+        console.log(number);
+        number = Math.floor(Math.random() * numQuestions);
+    }
+    return number;
+};
+
+var randomInAnArray1 = function(list) {
+    var numQuestions = 5;
+    var number = Math.floor(Math.random() * numQuestions);
+
+    while (list.indexOf(number) > -1 || number ===0 ) {
         console.log(number);
         number = Math.floor(Math.random() * numQuestions);
     }

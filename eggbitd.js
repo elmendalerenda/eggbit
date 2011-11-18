@@ -1,6 +1,6 @@
 var express = require('express');
 var eventd = require('./eventd');
-var eventd = require('./helpers');
+var helpers = require('./helpers');
 var eggbit_data = require('./eggbit_data');
 
 var eggbitd = express.createServer(
@@ -21,7 +21,7 @@ eggbitd.get('/tracks/all', function(req, res) {
 
 eggbitd.get('/game/new', function(req, res) {
   
-   var game = helpers.createGame();
+  var game = helpers.createGame();
   
   res.send(JSON.stringify(game), 200);
 });
@@ -46,7 +46,6 @@ eggbitd.post('/scores/publish', function(req, res) {
    
     res.send(JSON.stringify({score: theUser.score}), 200);
 });
-
 
 
 eggbitd.get('/tracks/current-version', function(req, res) {
