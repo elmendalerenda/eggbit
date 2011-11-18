@@ -14,9 +14,25 @@ var App = (function(lng, undefined) {
         lng.Sugar.Sound.background(music_url);
     };
 
+    var game = function(data) {
+        data = [{},{},{}];
+        lng.Data.Cache.set('game', data);
+
+        App.View.initGame();
+
+        var first_track = data[0];
+        App.View.loadTrack(first_track);
+
+        setTimeout(function(){
+            lng.Router.section('game');
+            lng.Sugar.Growl.hide();
+        }, 300);
+    };
+
     return {
         sound: sound,
-        music: music
+        music: music,
+        game: game
     };
 
 })(LUNGO);

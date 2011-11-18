@@ -18,16 +18,10 @@ App.View = (function(lng, app, undefined) {
         }, 100);
     };
 
-    var game = function(data) {
-        lng.Data.Cache.set('game', data);
-
-        progress('game', '100');
+    var initGame = function(data) {
         lng.Dom.query('.life .heart').removeClass('die');
-
-        setTimeout(function(){
-            lng.Sugar.Growl.hide();
-            lng.Router.section('game');
-        }, 300);
+        progress('game', '100');
+        lng.Dom.query('.track').removeClass('load').removeClass('unload');
     };
 
     //Auto-start
@@ -37,7 +31,7 @@ App.View = (function(lng, app, undefined) {
 
     return{
         progress: progress,
-        game: game,
+        initGame: initGame,
         loadTrack: loadTrack,
         unloadTrack: unloadTrack
     }

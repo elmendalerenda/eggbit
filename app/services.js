@@ -1,5 +1,13 @@
 App.Services = (function(lng, app, undefined) {
 
+	var repository = function() {
+		//@ToDo >> Conectar a la multiplayer (si estas online)
+		setTimeout(function(){
+			var data = {};
+			app.Data.saveRepository(data);
+		}, 100);
+	};
+
 	var newGame = function(level) {
 		lng.Sugar.Growl.show('Loading', 'monkey', true);
 
@@ -7,8 +15,8 @@ App.Services = (function(lng, app, undefined) {
 		setTimeout(function(){
 
 			var data = {};
-			app.View.game(data);
-		}, 2000);
+			app.game(data);
+		}, 100);
 	};
 
 	var createMultiplayer = function(level) {
@@ -17,7 +25,7 @@ App.Services = (function(lng, app, undefined) {
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
 			var data = {};
-			app.View.game(data);
+			app.game(data);
 		}, 2000);
 	};
 
@@ -27,11 +35,12 @@ App.Services = (function(lng, app, undefined) {
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
 			var data = {};
-			app.View.game(data);
+			app.game(data);
 		}, 2000);
 	};
 
     return {
+    	repository: repository,
     	newGame: newGame,
     	createMultiplayer: createMultiplayer,
     	connectMultiplayer: connectMultiplayer

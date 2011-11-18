@@ -32,8 +32,31 @@
         <article class="splash">
             <div class="onMiddle">
                 <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
-
                 <div id="loading" class="progress"><div class="value"></div></div>
+
+                <input type="text" placeholder="your twitter user"/>
+            </div>
+        </article>
+    </section>
+
+    <section id="signin">
+        <article>
+            <div class="sky"></div>
+            <div class="middle-ground" id="middle"></div>
+            <div class="ground"></div>
+
+            <div class="content menu">
+                <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
+                <nav class="game options">
+                    <a href="#" id="btn_NewGame" data-icon="mario">New game</a>
+                    <a href="#multiplayer" data-target="section" data-icon="tv">Multi player</a>
+                    <a href="#highscores" data-target="section" data-icon="star">Highscores</a>
+                    <!--
+                    <a href="#Settings" data-target="section" data-icon="human">Settings</a>
+                    -->
+                    <a href="#about" data-target="section" data-icon="human" class="mark">About...</a>
+                </nav>
+                <div class="copyright small">Copyright 2011. Tapquo Inc.</div>
             </div>
         </article>
     </section>
@@ -178,6 +201,7 @@
     <script src="app/app.js"></script>
     <script src="app/core.js"></script>
     <script src="app/data.js"></script>
+    <script src="app/data.config.js"></script>
     <script src="app/events.js"></script>
     <script src="app/services.js"></script>
     <script src="app/view.js"></script>
