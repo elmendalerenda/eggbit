@@ -1,11 +1,11 @@
 var sio = require('socket.io');
+exports.scores = {};
 
 exports.start = function(app) {
   var io = sio.listen(app);
   var sockets = [];
 
   var challenges = {};
-  var scores = {};
   var numQuestions = 40;
 
   io.sockets.on('connection', function (socket) {
@@ -67,13 +67,13 @@ exports.start = function(app) {
         var user = socket.username;
         var room = params.room;
         var theScore = params.score;
-        var theUser = scores[user];
+        var theUser = exports.scores[user];
         
         if(!theUser) {
           theUser = {};
           theUser[user] = user;
           theUser.score = 0;
-          scores[user] = theUser;
+          exports.scores[user] = theUser;
         }
         
         theUser.score += theScore;
