@@ -12,11 +12,9 @@ eggbitd.get('/server-side/*', function(req, res) {
   res.send('Forbbiden', 403);
 });
 
-/*
-eggbitd.get('/user/:id', function(req, res) {
-  var id = req.params.id;
+eggbitd.get('/tracks/all', function(req, res) {
+  res.send(JSON.stringify(resources), 200);
 });
-*/
 
 eggbitd.use(express.static(__dirname + '/..'));
 
