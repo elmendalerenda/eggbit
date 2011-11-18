@@ -19,7 +19,7 @@ App.Data = (function(lng, app, undefined) {
 	    drop: false,
 	    fields: {
 		    player: 'TEXT',
-		    name: 'TEXT'
+		    version: 'TEXT'
 		}
 	};
 
@@ -32,11 +32,13 @@ App.Data = (function(lng, app, undefined) {
 	var getPlayer = function() {
 		lng.Data.Sql.select('settings', null, function(result){
 			if (result.length > 0) {
-				app.Core.cachePlayer();
+				var settings = result[0];
+				app.Core.cachePlayer(settings.player);
 			} else {
 				//@ToDo >> Pedir al usuario su user twitter
-				lng.Data.Sql.insert('settings', {player:'soyjavi'});
-				app.Core.cachePlayer();
+				var player = 'soyjavi';
+				lng.Data.Sql.insert('settings', { player: player });
+				app.Core.cachePlayer(player);
 			}
 		});
 	};
@@ -44,16 +46,18 @@ App.Data = (function(lng, app, undefined) {
 	var getRepository = function() {
 		lng.Data.Sql.select('tracks', null, function(result) {
 			if (result.length > 0) {
-				lng.Core.cacheRepository(data);
+				app.Core.cacheRepository(result);
 			} else {
-				//@ToDo >> Llamar a server para bajar
 				app.Services.repository();
 			}
 		});
 	};
 
 	var saveRepository = function(data) {
-		//lng.Data.Sql.insert('tracks', data);
+		for (var i = 0, len = tracks.length; i < len; i++ ) {
+			lng.Data.Sql.insert('tracks', tracks[i]);
+		}
+
 		app.Core.cacheRepository(data);
 	};
 

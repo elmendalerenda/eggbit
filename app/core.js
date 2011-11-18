@@ -39,18 +39,20 @@ App.Core = (function(lng, app, undefined) {
     	lng.Data.Cache.set('repository', data);
     	app.View.progress('loading', '40');
 
-    	setTimeout(function(){
+    	setTimeout(function() {
 	        app.View.progress('loading', '60');
 	        app.Data.getPlayer();
 	    }, 300);
     };
 
     var cachePlayer = function(data) {
-    	lng.Data.Cache.set('repository', data);
+    	alert(data);
+    	lng.Data.Cache.set('player', data);
     	app.View.progress('loading', '80');
 
-    	setTimeout(function(){
+    	setTimeout(function() {
 	        app.View.progress('loading', '100');
+
 	        setTimeout(function(){
 	        	lng.Router.section('main');
 	        }, 500);
