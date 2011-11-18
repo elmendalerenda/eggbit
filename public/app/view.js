@@ -1,6 +1,6 @@
 App.View = (function(lng, app, undefined) {
 
-    var clock_width = 100;
+    var clock_seconds = 0;
 
     var progress = function(progress_id, percent) {
         var progress =  lng.Dom.query('#' + progress_id + ' .progress .value');
@@ -28,23 +28,26 @@ App.View = (function(lng, app, undefined) {
         _setChoiceButton(data, 'opt_3', 'btn_choice_3');
 
         lng.Dom.query('.track').addClass('load');
-
+        _initClock();
         app.music(track.music);
-
-        //setInterval(_startClock(), 10000);
-        _startClock();
     };
 
-    var _startClock = function() {
-        clock_width = 100;
-        app.View.progress('game', clock_width);
+    var _initClock = function() {
+        clock_seconds = 0;
+        app.View.progress('game', '100');
 
-        setInterval(function () {
-            clock_width -= 5;
-            if (clock_width >= 0) {
-                app.View.progress('game', clock_width);
-            }
-        }, 1000);
+        clearInterval(app.View.countDown);
+        setInterval(app.View.countDown, 1000);
+    };
+
+    var countDown = function() {
+        if (clock_seconds <= 20) {
+            clock_seconds++;
+            var clock_width = ((20 - clock_seconds) * 100) / 20;
+            app.View.progress('game', clock_width);
+        } else {
+            clearInterval(app.View.countDown);
+        }
     };
 
     var _setChoiceButton = function(data, property, container_id) {
@@ -70,7 +73,8 @@ App.View = (function(lng, app, undefined) {
         progress: progress,
         initGame: initGame,
         loadTrack: loadTrack,
-        unloadTrack: unloadTrack
+        unloadTrack: unloadTrack,
+        countDown: countDown
     }
 
 })(LUNGO, App);

@@ -5,7 +5,12 @@ App.Events = (function(lng, app, undefined) {
 
     lng.Dom.Event.live('#btn_createMultiplayer', 'TAP', function(event) {
         var player = lng.Data.Cache.get('player');
-    	app.Services.createMultiplayer(player);
+        lng.Sugar.Growl.show('Coming soon', 'monkey', true, 3);
+    	//@ToDo >> Coming Soon >> app.Services.createMultiplayer(player);
+    });
+
+    lng.Dom.Event.live('.back', 'TAP', function(event) {
+        app.music(null);
     });
 
     lng.Dom.Event.live('#btn_connectMultiplayer', 'TAP', function(event) {
@@ -13,7 +18,8 @@ App.Events = (function(lng, app, undefined) {
 
     	if (challenge_pin) {
             var player = lng.Data.Cache.get('player');
-			app.Services.connectMultiplayer(challenge_pin, player);
+			lng.Sugar.Growl.show('Coming soon', 'monkey', true, 3);
+            //@ToDo >> Coming Soon >> app.Services.connectMultiplayer(challenge_pin, player);
     	} else {
     		lng.Sugar.Growl.show('What Pin?', 'monkey', true, 2);
     	}

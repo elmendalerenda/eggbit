@@ -58,7 +58,7 @@ App.Core = (function(lng, app, undefined) {
 
     var subtractLife = function() {
     	var lifes = lng.Dom.query('.life .heart:not(.die)');
-    	if (lifes.length > 0) {
+    	if (lifes.length > 1) {
     		lng.Dom.query(lifes[0]).addClass('die');
     	} else {
     		playerDie();
@@ -66,10 +66,9 @@ App.Core = (function(lng, app, undefined) {
     };
 
     var playerDie = function() {
-		//@ToDo >> Cerrar la partida
     	lng.Sugar.Growl.show('The end', 'monkey', true, 3, function(){
+            app.music(null);
     		lng.Router.back();
-            //@ToDo >> Tenemos que llevarle al highscores
     	});
     };
 
