@@ -4,7 +4,7 @@ exports.resources = {
         year: "1988",
         platform: "NES",
         cover: "",
-        url_music: "",
+        music: "",
         level: 1
     },
     2: {
@@ -12,7 +12,7 @@ exports.resources = {
         year: "",
         platform: "",
         cover: "",
-        url_music: "",
+        music: "",
         level: ""
     },
     3: {
@@ -20,7 +20,7 @@ exports.resources = {
         year: "",
         platform: "",
         cover: "",
-        url_music: "",
+        music: "",
         level: ""
     },
     4: {
@@ -28,7 +28,7 @@ exports.resources = {
         year: "",
         platform: "",
         cover: "",
-        url_music: "",
+        music: "",
         level: ""
     },
     5: {
@@ -36,7 +36,11 @@ exports.resources = {
         year: "",
         platform: "",
         cover: "",
-        url_music: "",
+        music: "",
         level: ""
     }
+};
+
+exports.game = {
+
 };
