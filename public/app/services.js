@@ -7,7 +7,7 @@ App.Services = (function(lng, app, undefined) {
 	var checkVersion = function() {
 		lng.Service.get(server_url + 'tracks/current-version', {}, function(response) {
 			var server_version = response.version;
-			console.error(server_version);
+			app.Data.getVersion(server_version);
 		});
 	};
 

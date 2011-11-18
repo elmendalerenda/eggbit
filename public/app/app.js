@@ -3,7 +3,7 @@ var App = (function(lng, undefined) {
     //Define your LungoJS Application Instance
     lng.App.init({
         name: 'eggBIT',
-        version: '0.1'
+        version: '0.2'
     });
 
     var sound = function(sound_url) {

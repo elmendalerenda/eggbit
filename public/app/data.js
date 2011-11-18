@@ -59,7 +59,11 @@ App.Data = (function(lng, app, undefined) {
 		if (local_version === server_version) {
 			_getRepository();
 		} else {
-			app.Services.repository();
+			lng.Data.Sql.drop('tracks');
+			lng.Data.Sql.update('settings', {version: server_version}, {version: local_version});
+			setTimeout(function(){
+				app.Services.repository();
+			}, 300);
 		}
 	};
 
