@@ -1,1 +1,1 @@
-web: node /server_side/eggbitd.js
+web: node server_side/eggbitd.js
