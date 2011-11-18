@@ -4,7 +4,7 @@ exports.start = function(app) {
   var io = sio.listen(app);
   var sockets = [];
 
-  var rooms = {};
+  var challenges = {};
   var scores = {};
   var numQuestions = 40;
 
@@ -13,7 +13,7 @@ exports.start = function(app) {
     socket.on('createRoom', function (username) {
        var room = randomString();
        socket['username'] = username;
-       rooms[room] = [socket];
+       challenges[room] = [socket];
        console.log('created room',  room);
        socket.emit('roomCreated', room);
     });
@@ -24,10 +24,10 @@ exports.start = function(app) {
       
       var aRoom = params.room;
       var username = params.player;
-      if(!rooms[aRoom]) return;
+      if(!challenges[aRoom]) return;
  
       socket.username = username;
-      rooms[aRoom].push(socket);
+      challenges[aRoom].push(socket);
       broadcast(aRoom, 'joined', username);
     });
     
@@ -59,7 +59,7 @@ exports.start = function(app) {
     });
     
     socket.on('correctAnswer', function (room) {
-      console.log(rooms[room].length);
+      console.log(challenges[room].length);
       broadcast(room, 'nextQuestion', null);
     });
 
@@ -94,13 +94,13 @@ exports.start = function(app) {
   }
   
   var broadcast = function (room, event, params){
-    for(var i = 0; i < rooms[room].length; i++){
-        rooms[room][i].emit(event, params);
+    for(var i = 0; i < challenges[room].length; i++){
+        challenges[room][i].emit(event, params);
     }
   };
   
   var randomString = function() {
-      var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+      var chars = "0123456789";
       var string_length = 6;
       var randomstring = '';
       for (var i=0; i<string_length; i++) {
