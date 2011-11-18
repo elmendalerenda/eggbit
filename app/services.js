@@ -15,7 +15,6 @@ App.Services = (function(lng, app, undefined) {
 
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
-
 			var data = {};
 			app.game(data);
 		}, 100);
@@ -29,12 +28,9 @@ App.Services = (function(lng, app, undefined) {
   		server_socket.on('roomCreated', function (token) {
   			lng.Data.Cache.set('multiplayer', token);
     		//startGame();
-     	});
-
-		setTimeout(function(){
-			var data = {};
+    		var data = {};
 			app.game(data);
-		}, 2000);
+     	});
 	};
 
 	var connectMultiplayer = function(challenge_pin) {
@@ -48,7 +44,6 @@ App.Services = (function(lng, app, undefined) {
 	};
 
 	var _init = (function() {
-		alert(server_url);
 		server_socket = io.connect(server_url);
 	})();
 
