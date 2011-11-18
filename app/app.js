@@ -23,7 +23,7 @@ var App = (function(lng, undefined) {
         //setTimeout(function(){ app.View.loadTrack(); }, 300);
         //setTimeout(function(){ app.Core.nextTrack(); }, 2000);
         //return false;
-        lng.Router.section('game');
+        //lng.Router.section('game');
     };
 
     var multiPlayer = function() {

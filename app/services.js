@@ -9,10 +9,12 @@ App.Services = (function(lng, app, undefined) {
 	};
 
 	var connectMultiplayer = function(challenge_pin) {
+		lng.Sugar.Growl.show('Loading', 'monkey', true);
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
+			lng.Sugar.Growl.hide();
 			lng.Router.section('game');
-		}, 1000);
+		}, 2000);
 	};
 
     return {

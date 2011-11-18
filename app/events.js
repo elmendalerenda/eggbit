@@ -12,6 +12,8 @@ App.Events = (function(lng, app, undefined) {
 
     	if (challenge_pin) {
 			app.Services.connectMultiplayer();
+    	} else {
+    		alert('No')
     	}
     });
 

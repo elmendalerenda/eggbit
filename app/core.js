@@ -1,12 +1,12 @@
 App.Core = (function(lng, app, undefined) {
 
-	_init = (function(){
+	_init = (function() {
 		//@ToDo >> Conectar con server
         setTimeout(function(){ app.View.progress('loading', '30'); }, 500);
         setTimeout(function(){ app.View.progress('loading', '100'); }, 1000);
-        //setTimeout(function(){ lng.Router.section('main'); }, 1500);
+        setTimeout(function(){ lng.Router.section('main'); }, 1500);
 
-        lng.Router.section('multiplayer');
+        //lng.Router.section('multiplayer');
 	})();
 
     var checkChoice = function() {
@@ -20,7 +20,7 @@ App.Core = (function(lng, app, undefined) {
         setTimeout(function(){ App.View.loadTrack(); }, 1000);
     };
 
-    return{
+    return {
         checkChoice: checkChoice,
         nextTrack: nextTrack
     }
