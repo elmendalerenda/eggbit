@@ -24,13 +24,13 @@ App.Core = (function(lng, app, undefined) {
 
     var checkChoice = function(track_id) {
         var track = lng.Data.Cache.get('track');
-        console.error('PRUEBA');
-        console.error(track);
 
         if (track.id === track_id) {
             //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
+            console.error('acierto');
         } else {
             //@ToDo >> Si falla, no sumar puntos
+            console.error('fallo');
         }
         nextTrack();
     };
@@ -42,7 +42,7 @@ App.Core = (function(lng, app, undefined) {
         if (current_index_track < 20) {
             setTimeout(function(){
                 var tracks = lng.Data.Cache.get('game');
-                var track = game[current_index_track];
+                var track = tracks[current_index_track];
 
                 app.View.loadTrack(track);
             }, 300);
@@ -94,16 +94,12 @@ App.Core = (function(lng, app, undefined) {
 
     var getTrackById = function(track_id) {
         var track = {};
-
-        console.error(track_id);
-        console.error(repository);
-        for (var i = 0, len = repository.length; i <= len; i++) {
-            if (repository[i].id === track_id) {
+        for (var i=0, len = repository.length; i < len; i++) {
+            if (repository[i].id == track_id) {
                 track = repository[i];
                 break;
             }
         }
-        console.error(track);
 
         return track;
     };
