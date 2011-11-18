@@ -136,58 +136,87 @@ exports.resources = {
         music: "http://eggbit.herokuapp.com/assets/sounds/Megaman%20X%20Music%20Full%20OST%20Soundtrack%20Part%201.mp3",
         level: "1"
     },
-    /*{
+    {
         id: "16",
-        name: "",
+        name: "Ninja Gaiden",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Ninja%20Gaiden.mp3",
         level: "1"
     },
     {
         id: "17",
-        name: "",
+        name: "Pacman",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/pacman.mp3",
         level: "1"
     },
     {
         id: "18",
-        name: "",
+        name: "Pokemon",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Pokemon.mp3",
         level: "1"
     },
     {
         id: "19",
-        name: "",
+        name: "Seiken Densetsu",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Seiken%20Densetsu.mp3",
         level: "1"
     },
     {
         id: "20",
-        name: "",
+        name: "Super Mario Bros.",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Super%20Mario%20Bros.Soundtrack.mp3",
         level: "1"
     },{
         id: "21",
-        name: "",
+        name: "Tetris",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/tetris.mp3",
         level: "1"
-    }*/
+    },
+    {
+        id: "22",
+        name: "Tetris 2",
+        year: "",
+        platform: "SNES",
+        cover: "1",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Tetris_2.mp3",
+        level: "1"
+    }
+    ,
+    {
+        id: "23",
+        name: "Wonder Boy 3",
+        year: "",
+        platform: "SNES",
+        cover: "1",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Wonder%20Boy%203.mp3",
+        level: "1"
+    }
+    ,
+    {
+        id: "24",
+        name: "Zelda a think to the past",
+        year: "",
+        platform: "SNES",
+        cover: "1",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Zelda%20a%20think%20to%20the%20path.mp3",
+        level: "1"
+    }
     ]
 };
