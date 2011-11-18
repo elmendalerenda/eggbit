@@ -1,7 +1,5 @@
 var App = (function(lng, undefined) {
 
-    var current_track = 0;
-
     //Define your LungoJS Application Instance
     lng.App.init({
         name: 'eggBIT',
@@ -20,14 +18,7 @@ var App = (function(lng, undefined) {
         lng.Data.Cache.set('game', data);
 
         App.View.initGame();
-
-        var first_track = data[0];
-        App.View.loadTrack(first_track);
-
-        setTimeout(function(){
-            lng.Router.section('game');
-            lng.Sugar.Growl.hide();
-        }, 300);
+        App.Core.initGame(data);
     };
 
     return {

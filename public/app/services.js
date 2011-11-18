@@ -17,7 +17,6 @@ App.Services = (function(lng, app, undefined) {
 		lng.Service.get(server_url + 'game/new', {}, function(response) {
 			var game = response.game;
 			if (game.length) {
-				console.error(game);
 				app.game(game);
 			}
 		});

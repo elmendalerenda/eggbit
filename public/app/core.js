@@ -1,6 +1,6 @@
 App.Core = (function(lng, app, undefined) {
 
-    var current_track = 0;
+    var current_index_track = 0;
 
 	_init = (function() {
 		//@ToDo >> Conectar con server
@@ -10,15 +10,34 @@ App.Core = (function(lng, app, undefined) {
 	    }, 500);
 	})();
 
+    var initGame = function(game) {
+        current_index_track = 0;
+        var track = game[current_index_track];
+        App.View.loadTrack(track);
+
+        setTimeout(function(){
+            lng.Router.section('game');
+            lng.Sugar.Growl.hide();
+        }, 300);
+    };
+
     var checkChoice = function() {
         //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
     };
 
     var nextTrack = function() {
-        App.View.unloadTrack();
-        //@ToDo >> Tenemos que cargar la siguiente canción
+        app.View.unloadTrack();
 
-        setTimeout(function(){ App.View.loadTrack(); }, 300);
+        current_index_track ++;
+        if (current_index_track < 20) {
+            setTimeout(function(){
+                var tracks = lng.Data.Cache.get('game');
+                var track = game[current_index_track];
+                app.View.loadTrack(track);
+            }, 300);
+        } else {
+            playerDie();
+        }
     };
 
     var subtractLife = function() {
@@ -34,6 +53,7 @@ App.Core = (function(lng, app, undefined) {
 		//@ToDo >> Cerrar la partida
     	lng.Sugar.Growl.show('The end', 'monkey', true, 3, function(){
     		lng.Router.back();
+            //@ToDo >> Tenemos que llevarle al highscores
     	});
     };
 
@@ -58,7 +78,7 @@ App.Core = (function(lng, app, undefined) {
 	        	lng.Router.section('main');
 	        }, 500);
 	    }, 300);
-    }
+    };
 
     return {
     	cacheRepository: cacheRepository,
@@ -66,7 +86,8 @@ App.Core = (function(lng, app, undefined) {
         checkChoice: checkChoice,
         nextTrack: nextTrack,
         subtractLife: subtractLife,
-        playerDie: playerDie
+        playerDie: playerDie,
+        initGame: initGame
     }
 
 })(LUNGO, App);
