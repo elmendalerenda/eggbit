@@ -1,6 +1,7 @@
 App.Core = (function(lng, app, undefined) {
 
     var current_index_track = 0;
+    var repository = [];
 
 	_init = (function() {
 		//@ToDo >> Conectar con server
@@ -33,6 +34,7 @@ App.Core = (function(lng, app, undefined) {
             setTimeout(function(){
                 var tracks = lng.Data.Cache.get('game');
                 var track = game[current_index_track];
+
                 app.View.loadTrack(track);
             }, 300);
         } else {
@@ -58,8 +60,9 @@ App.Core = (function(lng, app, undefined) {
     };
 
     var cacheRepository = function(data) {
-    	lng.Data.Cache.set('repository', data);
-    	app.View.progress('loading', '40');
+    	//lng.Data.Cache.set('repository', data);
+    	repository = data;
+        app.View.progress('loading', '40');
 
     	setTimeout(function() {
 	        app.View.progress('loading', '60');
@@ -80,6 +83,19 @@ App.Core = (function(lng, app, undefined) {
 	    }, 300);
     };
 
+    var getTrackById = function(track_id) {
+        var track = {};
+
+        for (var i = 0, len = repository.length; i <= len; i++) {
+            if (repository[i].id === track_id) {
+                track = repository[i];
+                break;
+            }
+        }
+
+        return track;
+    };
+
     return {
     	cacheRepository: cacheRepository,
     	cachePlayer: cachePlayer,
@@ -87,7 +103,8 @@ App.Core = (function(lng, app, undefined) {
         nextTrack: nextTrack,
         subtractLife: subtractLife,
         playerDie: playerDie,
-        initGame: initGame
+        initGame: initGame,
+        getTrackById: getTrackById
     }
 
 })(LUNGO, App);
