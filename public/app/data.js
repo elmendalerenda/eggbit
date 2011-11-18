@@ -43,7 +43,27 @@ App.Data = (function(lng, app, undefined) {
 		});
 	};
 
-	var getRepository = function() {
+	var getVersion = function(server_version) {
+		lng.Data.Sql.select('settings', null, function(result) {
+			if (result.length > 0) {
+				var settings = result[0];
+				_compareVersion(settings.version, server_version);
+			} else {
+				lng.Data.Sql.insert('settings', { player: 'soyjavi', version: server_version } );
+				app.Services.repository();
+			}
+		});
+	};
+
+	var _compareVersion = function(local_version, server_version) {
+		if (local_version === server_version) {
+			_getRepository();
+		} else {
+			app.Services.repository();
+		}
+	};
+
+	var _getRepository = function() {
 		lng.Data.Sql.select('tracks', null, function(result) {
 			if (result.length > 0) {
 				app.Core.cacheRepository(result);
@@ -63,7 +83,7 @@ App.Data = (function(lng, app, undefined) {
 
     return {
     	getPlayer: getPlayer,
-    	getRepository: getRepository,
+    	getVersion: getVersion,
     	saveRepository: saveRepository
     }
 

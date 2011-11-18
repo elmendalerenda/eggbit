@@ -4,6 +4,13 @@ App.Services = (function(lng, app, undefined) {
 	//var server_url = 'http://eggbit.herokuapp.com/';
 	var server_socket;
 
+	var checkVersion = function() {
+		lng.Service.get(server_url + 'tracks/current-version', {}, function(response) {
+			var server_version = response.version;
+			console.error(server_version);
+		});
+	};
+
 	var repository = function() {
 		lng.Service.get(server_url + 'tracks/all', {}, function(response) {
 			var tracks = response.tracks;
@@ -59,6 +66,7 @@ App.Services = (function(lng, app, undefined) {
 	})();
 
     return {
+    	checkVersion: checkVersion,
     	repository: repository,
     	newGame: newGame,
     	saveScore: saveScore,
