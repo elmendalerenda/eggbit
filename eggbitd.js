@@ -49,7 +49,7 @@ eggbitd.get('/tracks/current-version', function(req, res) {
   res.send(JSON.stringify({version: '1.0'}), 200);
 });
 
-eggbitd.use(express.static(__dirname));
+eggbitd.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 3000;
 

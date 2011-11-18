@@ -1,0 +1,31 @@
+/**
+ * Stylesheet
+ * 
+ * @namespace eggbit
+ * @class storyboards
+ *
+ * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@-webkit-keyframes storyboard-playing {
+	0% { box-shadow: 0px 0px 5px #fff; 
+			-webkit-box-shadow: 0px 0px 5px #fff;
+			-moz-box-shadow: 0px 0px 5px #fff;}
+	50% { box-shadow: 0px 0px 50px #fff; 
+			-webkit-box-shadow: 0px 0px 50px #fff;
+			-moz-box-shadow: 0px 0px 50px #fff;} 
+	100% { box-shadow: 0px 0px 5px #fff; 
+			-webkit-box-shadow: 0px 0px 5px #fff;
+			-moz-box-shadow: 0px 0px 5px #fff;}	
+}
+
+@-webkit-keyframes storyboard-error {
+	0% { -webkit-transform: translate(10px, 0px);  }
+	50% { -webkit-transform: translate(0px, 0px); } 
+	100% { -webkit-transform: translate(10px, 0px); }	
+}
+
+@-webkit-keyframes storyboard-load {
+	0% { -webkit-transform: translate3d(100%, 0, 0);  }
+	100% { -webkit-transform: translate3d(0%, 0, 0); }	
+}
