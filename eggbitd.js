@@ -45,7 +45,7 @@ eggbitd.post('/scores/publish', function(req, res) {
 
 
 eggbitd.get('/tracks/current-version', function(req, res) {
-  res.send(JSON.stringify({version: '1.1'}), 200);
+  res.send(JSON.stringify({version: '1.2'}), 200);
 });
 
 eggbitd.use(express.static(__dirname + '/public'));
