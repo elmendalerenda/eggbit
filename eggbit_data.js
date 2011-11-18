@@ -39,8 +39,8 @@ exports.resources = {
     {
         id: "5",
         name: "Metal Gears Solid 1",
-        year: "2",
-        platform: "1998",
+        year: "1998",
+        platform: "Playstation",
         cover: "http://www.losprimeros10.es/wp-content/uploads/2011/05/metal_gear_solid_pal.jpg",
         music: "http://eggbit.herokuapp.com/assets/sounds/Metal%20Gears.mp3",
         level: "1"
@@ -58,85 +58,85 @@ exports.resources = {
         id: "7",
         name: "Sonic",
         year: "1991",
-        platform: "SNES",
+        platform: "Sega",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Sonic.mp3",
         level: "1"
     },
-    /*{
+    {
         id: "8",
-        name: "",
-        year: "",
-        platform: "SNES",
+        name: "Bubble Bobble",
+        year: "1986",
+        platform: "NES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Bubble%20Bobble.mp3",
         level: "1"
     },
     {
         id: "9",
-        name: "",
-        year: "",
+        name: "Castlevania",
+        year: "1986",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Castlevania.mp3",
         level: "1"
     },
     {
         id: "10",
-        name: "",
-        year: "",
-        platform: "SNES",
+        name: "Dr. Mario",
+        year: "1990",
+        platform: "NES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Dr.Mario.mp3",
         level: "1"
     },
 
     {
         id: "11",
-        name: "",
-        year: "",
-        platform: "SNES",
+        name: "Duck Hunt",
+        year: "1987",
+        platform: "NES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Duck%20Hunt.mp3",
         level: "1"
     },
     {
         id: "12",
-        name: "",
-        year: "",
-        platform: "SNES",
+        name: "Golden Axe",
+        year: "1989",
+        platform: "SEGA",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Golden_Axe.mp3",
         level: "1"
     },
     {
         id: "13",
-        name: "",
+        name: "Kirby's Dream Land",
         year: "",
-        platform: "SNES",
+        platform: "GB",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Kirby's%20Dream%20Land.mp3",
         level: "1"
     },
     {
         id: "14",
-        name: "",
-        year: "",
-        platform: "SNES",
+        name: "Landstalker",
+        year: "1991",
+        platform: "Sega",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Landstalker.mp3",
         level: "1"
     },
     {
         id: "15",
-        name: "",
+        name: "Megaman X Music Full OST Soundtrack Part 1",
         year: "",
         platform: "SNES",
         cover: "1",
-        music: "",
+        music: "http://eggbit.herokuapp.com/assets/sounds/Megaman%20X%20Music%20Full%20OST%20Soundtrack%20Part%201.mp3",
         level: "1"
     },
-    {
+    /*{
         id: "16",
         name: "",
         year: "",
