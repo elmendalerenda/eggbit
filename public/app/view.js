@@ -18,6 +18,9 @@ App.View = (function(lng, app, undefined) {
     };
 
     var _showTrack = function(data) {
+        var track = app.Core.getTrackById(data.id);
+        app.music(track.music);
+
         _setChoiceButton(data, 'opt_1', 'btn_choice_1');
         _setChoiceButton(data, 'opt_2', 'btn_choice_2');
         _setChoiceButton(data, 'opt_3', 'btn_choice_3');
