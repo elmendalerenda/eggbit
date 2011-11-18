@@ -112,7 +112,7 @@ exports.resources = {
     {
         id: "13",
         name: "Kirby's Dream Land",
-        year: "",
+        year: "12",
         platform: "GB",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Kirby's%20Dream%20Land.mp3",
@@ -130,7 +130,7 @@ exports.resources = {
     {
         id: "15",
         name: "Megaman X Music Full OST Soundtrack Part 1",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Megaman%20X%20Music%20Full%20OST%20Soundtrack%20Part%201.mp3",
@@ -139,7 +139,7 @@ exports.resources = {
     {
         id: "16",
         name: "Ninja Gaiden",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Ninja%20Gaiden.mp3",
@@ -148,7 +148,7 @@ exports.resources = {
     {
         id: "17",
         name: "Pacman",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/pacman.mp3",
@@ -157,7 +157,7 @@ exports.resources = {
     {
         id: "18",
         name: "Pokemon",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Pokemon.mp3",
@@ -166,7 +166,7 @@ exports.resources = {
     {
         id: "19",
         name: "Seiken Densetsu",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Seiken%20Densetsu.mp3",
@@ -175,7 +175,7 @@ exports.resources = {
     {
         id: "20",
         name: "Super Mario Bros.",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Super%20Mario%20Bros.Soundtrack.mp3",
@@ -183,7 +183,7 @@ exports.resources = {
     },{
         id: "21",
         name: "Tetris",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/tetris.mp3",
@@ -192,7 +192,7 @@ exports.resources = {
     {
         id: "22",
         name: "Tetris 2",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Tetris_2.mp3",
@@ -202,7 +202,7 @@ exports.resources = {
     {
         id: "23",
         name: "Wonder Boy 3",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Wonder%20Boy%203.mp3",
@@ -212,7 +212,7 @@ exports.resources = {
     {
         id: "24",
         name: "Zelda a think to the past",
-        year: "",
+        year: "12",
         platform: "SNES",
         cover: "1",
         music: "http://eggbit.herokuapp.com/assets/sounds/Zelda%20a%20think%20to%20the%20path.mp3",
