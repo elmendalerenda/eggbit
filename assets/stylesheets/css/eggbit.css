@@ -1,6 +1,9 @@
 h1.logo{font-size:38px;height:72px;}
 h1.logo img{float:left;height:46px;margin:10px 5px 0px 0px;}
 .mark{color:#F9C845;}
+.button.orange{background:#F9C845;}
+.button.tall{height:48px !important;line-height:46px !important;}
+.paragraph{padding-bottom:12px;display:block;}
 .sky{position:relative;z-index:2;height:160px;overflow:hidden;background:#353b6c url(../../images/app-skyline-night.png) repeat-x 350% 100%;}
 .middle-ground{position:relative;z-index:1;height:120px;background:#292230 url(../../images/app-hills.png) no-repeat 50% 100%;}
 .ground{position:absolute;z-index:1;left:0;right:0;bottom:0;top:365px;min-height:460px;overflow:hidden;}
