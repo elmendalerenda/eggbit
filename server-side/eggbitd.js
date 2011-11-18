@@ -5,9 +5,8 @@ var eggbit_data = require('./eggbit_data');
 var eggbitd = express.createServer();
 
 var resources = eggbit_data.resources;
-console.log(resources);
 
-//eventd.start(eggbitd, users, boards);
+eventd.start(eggbitd);
 
 eggbitd.get('/server-side/*', function(req, res) {
   res.send('Forbbiden', 403);
@@ -26,3 +25,8 @@ var port = 3000;
 eggbitd.listen(port, function() {
   console.log("Listening on " + port);
 });
+
+
+
+
+

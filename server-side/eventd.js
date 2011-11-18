@@ -1,94 +1,112 @@
 var sio = require('socket.io');
 
-exports.start = function(app, users, boards) {
+exports.start = function(app) {
   var io = sio.listen(app);
   var sockets = [];
 
-  var broadcast = function(name, ev) {
-    sockets.forEach(function(socket) {
-      socket.emit(name, ev);
+  var rooms = {};
+  var scores = {};
+  var numQuestions = 40;
+
+  io.sockets.on('connection', function (socket) {
+   
+    socket.on('createRoom', function (username) {
+       var room = randomString();
+       socket['username'] = username;
+       rooms[room] = [socket];
+       console.log('created room',  room);
+       socket.emit('roomCreated', room);
     });
-  };
-
-  io.sockets.on('connection', function(socket) {
-    sockets.push(socket);
-
-    socket.on('board/create', function(ev) {
-      broadcast('board/create', ev);
+    
+    socket.on('join', function (params) {
+      
+      console.log('joined',  params);
+      
+      var aRoom = params.room;
+      var username = params.player;
+      if(!rooms[aRoom]) return;
+ 
+      socket.username = username;
+      rooms[aRoom].push(socket);
+      broadcast(aRoom, 'joined', username);
     });
+    
+    socket.on('startGame', function (aRoom) {
+      var game = [];
+      var questions = [];
+      
+      for(var i =0; i < 20; i += 1){
+        var id = randomInAnArray(questions)
+        questions.push(id);
+        
+        var answers = [id];
+        answers.push(randomInAnArray(answers));
+        answers.push(randomInAnArray(answers));
+        
+        answers.sort(function(){
+          return Math.random() > 0.5
+        });
 
-    socket.on('board/create/all', function(last_time) {
-      socket.emit('board/create/replay', boards.all());
+        var question = {};
+        question[id] = answers;
+        
+        game.push(question);
+      }
+      
+      console.log(game)
+      
+      broadcast(aRoom, 'starting', game);
     });
-
-    socket.on('board/remove', function(ev) {
-      console.dir(ev);
-      boards.remove(ev.id);
-      broadcast('board/remove', ev);
-    });
-
-    socket.on('board/change', function(ev) {
-      broadcast('board/change', ev);
-
-    });
-
-    socket.on('board/user_registered', function(ev) {
-      broadcast('board/user_registered', ev);
-
-    });
-
-    socket.on('board/user_unregistered', function(ev) {
-      broadcast('board/user_unregistered', ev);
-
-    });
-
-    socket.on('board/column/change', function(ev) {
-      broadcast('board/column/change', ev);
-
-    });
-
-    socket.on('board/task/create', function(ev) {
-      broadcast('board/task/create', ev);
-
-    });
-
-    socket.on('board/task/remove', function(ev) {
-      broadcast('board/task/remove', ev);
-
-    });
-
-    socket.on('board/task/change', function(ev) {
-      broadcast('board/task/change', ev);
-
-    });
-
-    socket.on('board/task/user_registered', function(ev) {
-      broadcast('board/task/user_registered', ev);
-
+    
+    socket.on('correctAnswer', function (room) {
+      console.log(rooms[room].length);
+      broadcast(room, 'nextQuestion', null);
     });
 
-    socket.on('board/task/user_unregistered', function(ev) {
-      broadcast('board/task/user_unregistered', ev);
-
-    });
-
-    socket.on('board/task/file_added', function(ev) {
-      broadcast('board/task/file_added', ev);
-
-    });
-
-    socket.on('board/task/file_removed', function(ev) {
-      broadcast('board/task/file_removed', ev);
-
-    });
-
-    socket.on('board/task/moved', function(ev) {
-      broadcast('board/task/moved', ev);
-
-    });
-
-    socket.on('disconnect', function() {
-      sockets.splice(sockets.indexOf(socket), 1);
+    socket.on('publishScore', function (params) {
+        var user = socket.username;
+        var room = params.room;
+        var theScore = params.score;
+        var theUser = scores[user];
+        
+        if(!theUser) {
+          theUser = {};
+          theUser[user] = user;
+          theUser.score = 0;
+          scores[user] = theUser;
+        }
+        
+        theUser.score += theScore;
+        
+        broadcast(room, 'showScore', {player: socket['username'], score: theScore});
     });
   });
+  
+  
+  var randomInAnArray = function(list){
+    
+    var number = Math.floor(Math.random() * numQuestions); 
+    
+    while(list.indexOf(number) > -1 ){
+        number = Math.floor(Math.random() * numQuestions);
+    }
+    return number;
+  }
+  
+  var broadcast = function (room, event, params){
+    for(var i = 0; i < rooms[room].length; i++){
+        rooms[room][i].emit(event, params);
+    }
+  };
+  
+  var randomString = function() {
+      var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+      var string_length = 6;
+      var randomstring = '';
+      for (var i=0; i<string_length; i++) {
+          var rnum = Math.floor(Math.random() * chars.length);
+          randomstring += chars.substring(rnum,rnum+1);
+      }
+      return randomstring;
+  }
 };
