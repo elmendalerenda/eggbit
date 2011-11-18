@@ -11,7 +11,7 @@ exports.resources = {
     },
     {
         id: "2",
-        name: "Zelda a think to the path",
+        name: "Zelda a think to the past",
         year: "1991",
         platform: "SNES",
         cover: "http://www.emuparadise.me/fup/up/34385-Legend_of_Zelda,_The_-_A_Link_to_the_Past_(USA)-32.jpg",
@@ -47,7 +47,7 @@ exports.resources = {
     },
      {
         id: "6",
-        name: "Crash Bandicoot Intro",
+        name: "Crash Bandicoot",
         year: "1996",
         platform: "Playstation",
         cover: "http://www.camelotgames.net/images/BadCharsCrash_Bandicoot.png",
@@ -129,7 +129,7 @@ exports.resources = {
     },
     {
         id: "15",
-        name: "Megaman X Music Full OST Soundtrack Part 1",
+        name: "Megaman X ",
         year: "12",
         platform: "SNES",
         cover: "1",
