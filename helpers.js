@@ -17,9 +17,9 @@ exports.createGame = function() {
 
         var question = {};
         question.id = id;
-        question.opt_1 = answers[0];
-        question.opt_2 = answers[1];
-        question.opt_3 = answers[2];
+        question.opt_1 = answers[0].toString();
+        question.opt_2 = answers[1].toString();
+        question.opt_3 = answers[2].toString();
 
         game.push(question);
     }
