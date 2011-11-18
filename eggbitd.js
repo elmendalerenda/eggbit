@@ -49,6 +49,7 @@ eggbitd.get('/tracks/current-version', function(req, res) {
 });
 
 eggbitd.use(express.static(__dirname + '/public'));
+eggbitd.use(express.directory(__dirname + '/public/assets/sounds'));
 
 var port = process.env.PORT || 3000;
 
