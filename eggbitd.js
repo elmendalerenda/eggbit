@@ -43,8 +43,6 @@ eggbitd.post('/scores/publish', function(req, res) {
     res.send(JSON.stringify({score: theUser.score}), 200);
 });
 
-
-
 eggbitd.get('/tracks/current-version', function(req, res) {
   res.send(JSON.stringify({version: '1.0'}), 200);
 });
@@ -56,10 +54,3 @@ var port = process.env.PORT || 3000;
 eggbitd.listen(port, function() {
   console.log("Listening on " + port);
 });
-
-
-
-
-
-
-

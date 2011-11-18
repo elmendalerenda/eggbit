@@ -19,6 +19,7 @@ exports.createGame = function() {
 
         game.push(question);
     }
+    
     return game;
 };
 
