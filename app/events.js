@@ -4,7 +4,9 @@ App.Events = (function(lng, app, undefined) {
     });
 
     lng.Dom.Event.live('#btn_createMultiplayer', 'TAP', function(event) {
-    	app.Services.createMultiplayer(1);
+        var player = lng.Data.Cache.get('player');
+        alert(player);
+    	app.Services.createMultiplayer(player);
     });
 
     lng.Dom.Event.live('#btn_connectMultiplayer', 'TAP', function(event) {
