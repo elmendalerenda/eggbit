@@ -20,22 +20,19 @@ App.View = (function(lng, app, undefined) {
     var _showTrack = function(data) {
         console.error(data);
 
-        //_setChoiceButton()
-        //var opt_2 = app.Core.getTrackById(data.opt_2);
-        //var opt_3 = app.Core.getTrackById(data.opt_3);
-
-
-        //console.error(opt_1);
-        //lng.Dom.query('#btn_choice_1').html(opt_1.name);
-        //lng.Dom.query('#btn_choice_2').html(opt_2.name);
-        //lng.Dom.query('#btn_choice_3').html(opt_3.name);
+        _setChoiceButton(data, 'opt_1', 'btn_choice_1');
+        _setChoiceButton(data, 'opt_2', 'btn_choice_2');
+        _setChoiceButton(data, 'opt_3', 'btn_choice_3');
 
         lng.Dom.query('.track').addClass('load');
     };
 
-    var _setChoiceButton = function(reference, container) {
-        var track = app.Core.getTrackById(data.opt_1);
-        lng.Dom.query(container).html(track.name);
+    var _setChoiceButton = function(data, property, container_id) {
+        var track = app.Core.getTrackById(data[property]);
+
+        var container = lng.Dom.query('#' + container_id);
+        container.html(track.name);
+        container.data('track', track.id);
     }
 
     var initGame = function(data) {
