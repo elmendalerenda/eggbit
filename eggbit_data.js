@@ -63,7 +63,7 @@ exports.resources = {
         music: "http://eggbit.herokuapp.com/assets/sounds/Sonic.mp3",
         level: "1"
     },
-    {
+    /*{
         id: "8",
         name: "",
         year: "",
@@ -188,6 +188,6 @@ exports.resources = {
         cover: "1",
         music: "",
         level: "1"
-    }
+    }*/
     ]
 };
