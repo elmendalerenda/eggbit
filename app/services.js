@@ -5,8 +5,9 @@ App.Services = (function(lng, app, undefined) {
 
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
-			lng.Sugar.Growl.hide();
-			app.View.game();
+
+			var data = {};
+			app.View.game(data);
 		}, 2000);
 	};
 
@@ -15,8 +16,8 @@ App.Services = (function(lng, app, undefined) {
 
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
-			lng.Sugar.Growl.hide();
-
+			var data = {};
+			app.View.game(data);
 		}, 2000);
 	};
 
@@ -25,8 +26,8 @@ App.Services = (function(lng, app, undefined) {
 
 		//@ToDo >> Conectar a la multiplayer (si estas online)
 		setTimeout(function(){
-			lng.Sugar.Growl.hide();
-			lng.Router.section('game');
+			var data = {};
+			app.View.game(data);
 		}, 2000);
 	};
 

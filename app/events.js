@@ -1,6 +1,6 @@
 App.Events = (function(lng, app, undefined) {
 	lng.Dom.Event.live('#btn_NewGame', 'TAP', function(event) {
-    	app.newGame();
+    	app.Services.newGame();
     });
 
     lng.Dom.Event.live('#btn_createMultiplayer', 'TAP', function(event) {
@@ -17,15 +17,13 @@ App.Events = (function(lng, app, undefined) {
     	}
     });
 
-    lng.Dom.Event.live('.sound', 'TAP', function(event) {
-        app.sound('assets/sounds/button.wav');
-    });
-
     lng.Dom.Event.bind('.choices a', 'TAP', function(event) {
 		app.Core.nextTrack();
     });
 
-
+    lng.Dom.Event.live('.sound', 'TAP', function(event) {
+        app.sound('assets/sounds/button.wav');
+    });
 
     return {
 

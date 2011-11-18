@@ -20,9 +20,27 @@ App.Core = (function(lng, app, undefined) {
         setTimeout(function(){ App.View.loadTrack(); }, 1000);
     };
 
+    var subtractLife = function() {
+    	var lifes = lng.Dom.query('.life .heart:not(.die)');
+    	if (lifes.length > 0) {
+    		lng.Dom.query(lifes[0]).addClass('die');
+    	} else {
+    		playerDie();
+    	}
+    };
+
+    var playerDie = function(){
+		//@ToDo >> Cerrar la partida
+    	lng.Sugar.Growl.show('The end', 'monkey', true, 3, function(){
+    		lng.Router.back();
+    	});
+    };
+
     return {
         checkChoice: checkChoice,
-        nextTrack: nextTrack
+        nextTrack: nextTrack,
+        subtractLife: subtractLife,
+        playerDie: playerDie
     }
 
 })(LUNGO, App);

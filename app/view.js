@@ -9,6 +9,8 @@ App.View = (function(lng, app, undefined) {
     };
 
     var loadTrack = function(data) {
+        lng.Data.Cache.set('track', data);
+
         //@ToDo
         lng.Dom.query('.track').removeClass('unload');
         setTimeout(function(){
@@ -16,12 +18,16 @@ App.View = (function(lng, app, undefined) {
         }, 100);
     };
 
-    var game = function() {
+    var game = function(data) {
+        lng.Data.Cache.set('game', data);
+
         progress('game', '100');
         lng.Dom.query('.life .heart').removeClass('die');
 
-
-        lng.Router.section('game');
+        setTimeout(function(){
+            lng.Sugar.Growl.hide();
+            lng.Router.section('game');
+        }, 300);
     };
 
     //Auto-start
