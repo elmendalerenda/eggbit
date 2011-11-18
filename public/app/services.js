@@ -1,6 +1,7 @@
 App.Services = (function(lng, app, undefined) {
 
-	var server_url = 'http://eggbit.herokuapp.com/';
+	var server_url = 'http://localhost:3000/';
+	//var server_url = 'http://eggbit.herokuapp.com/';
 	var server_socket;
 
 	var repository = function() {
@@ -13,16 +14,18 @@ App.Services = (function(lng, app, undefined) {
 	var newGame = function(level) {
 		lng.Sugar.Growl.show('Loading', 'monkey', true);
 
-		//@ToDo >> Conectar a la multiplayer (si estas online)
-		setTimeout(function(){
-			var data = {};
-			app.game(data);
-		}, 100);
+		lng.Service.get(server_url + 'game/new', {}, function(response) {
+			var tracks = response.tracks;
+			if (tracks.length) {
+				console.error(tracks);
+				app.game(tracks);
+			}
+		});
 	};
 
 	var saveScore = function(player, score) {
 		lng.Service.post(server_url + 'game', {player: player, score: score}, function(response) {
-			console.error(response);
+
 		});
 	};
 

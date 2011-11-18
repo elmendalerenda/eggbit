@@ -1,6 +1,5 @@
-@font-face{font-family:'EightBit';src:url('../../fonts/fff_spacedust.ttf') format('truetype');}.app{background:#292230 url(../../images/app-bg-texture.png);font-family:'EightBit';font-size:13px;background-image:none;background-color:#211B26;color:#fff;}
+@font-face{font-family:'EightBit';src:url('../../fonts/fff_spacedust.ttf') format('truetype');}.app{background:#292230;font-family:'EightBit';font-size:13px;background-image:none;background-color:#211B26;color:#fff;}
 article{background:none;}
-
 header{background:#353B6C;-webkit-box-shadow:none;height:48px;line-height:48px;}
 footer{background:#2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));-webkit-box-shadow:inset 0px 1px rgba(0, 0, 0, 0.5),0px -1px 2px rgba(0, 0, 0, 0.4);}
 .title{color:#fff;text-shadow:rgba(0, 0, 0, 0.5) 0 -1px 1px;}

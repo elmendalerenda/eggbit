@@ -2,7 +2,7 @@ App.Data = (function(lng, app, undefined) {
 
 	var table_tracks = {
         name: 'tracks',
-        drop: true,
+        drop: false,
     	fields: {
             id: 'INTEGER',
             name: 'TEXT',

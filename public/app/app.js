@@ -15,7 +15,6 @@ var App = (function(lng, undefined) {
     };
 
     var game = function(data) {
-        data = [{},{},{}];
         lng.Data.Cache.set('game', data);
 
         App.View.initGame();
