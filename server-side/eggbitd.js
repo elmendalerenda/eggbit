@@ -22,7 +22,7 @@ eggbitd.get('/tracks/current-version', function(req, res) {
 
 eggbitd.use(express.static(__dirname + '/..'));
 
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 eggbitd.listen(port, function() {
   console.log("Listening on " + port);
