@@ -3,6 +3,7 @@ exports.createGame = function() {
     var questions = [];
 
     for (var i = 0; i < 20; i += 1) {
+        
         var id = randomInAnArray(questions)
         questions.push(id);
 
@@ -15,16 +16,19 @@ exports.createGame = function() {
         });
 
         var question = {};
-        question[id] = answers;
+        question.id = id;
+        question.opt_1 = answers[0];
+        question.opt_2 = answers[1];
+        question.opt_3 = answers[2];
 
         game.push(question);
     }
     
-    return game;
+    return {game: game};
 };
 
 var randomInAnArray = function(list) {
-    var numQuestions = 40;
+    var numQuestions = 20;
     var number = Math.floor(Math.random() * numQuestions);
 
     while (list.indexOf(number) > -1) {
