@@ -28,11 +28,17 @@ App.Core = (function(lng, app, undefined) {
         if (track.id === track_id) {
             //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
             console.error('acierto');
+            nextTrack();
         } else {
             //@ToDo >> Si falla, no sumar puntos
-            console.error('fallo');
+            lng.Dom.query('.music').addClass('error');
+            setTimeout(function() {
+
+                lng.Dom.query('.music').removeClass('error');
+                app.Core.subtractLife();
+                nextTrack();
+            }, 1500);
         }
-        nextTrack();
     };
 
     var nextTrack = function() {
@@ -69,7 +75,6 @@ App.Core = (function(lng, app, undefined) {
     };
 
     var cacheRepository = function(data) {
-    	//lng.Data.Cache.set('repository', data);
     	repository = data;
         app.View.progress('loading', '40');
 

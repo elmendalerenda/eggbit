@@ -1,6 +1,9 @@
 App.View = (function(lng, app, undefined) {
 
+    var clock_width = 100;
+
     var progress = function(progress_id, percent) {
+        var progress =  lng.Dom.query('#' + progress_id + ' .progress .value');
         lng.Dom.query('#' + progress_id + ' .progress .value').css('width', percent + '%');
     };
 
@@ -19,13 +22,27 @@ App.View = (function(lng, app, undefined) {
 
     var _showTrack = function(data) {
         var track = app.Core.getTrackById(data.id);
-        app.music(track.music);
 
         _setChoiceButton(data, 'opt_1', 'btn_choice_1');
         _setChoiceButton(data, 'opt_2', 'btn_choice_2');
         _setChoiceButton(data, 'opt_3', 'btn_choice_3');
 
         lng.Dom.query('.track').addClass('load');
+
+        app.music(track.music);
+        _startClock();
+    };
+
+    var _startClock = function() {
+        clock_width = 100;
+        app.View.progress('game', clock_width);
+
+        setInterval(function () {
+            clock_width -= 5;
+            if (clock_width >= 0) {
+                app.View.progress('game', clock_width);
+            }
+        }, 1000);
     };
 
     var _setChoiceButton = function(data, property, container_id) {

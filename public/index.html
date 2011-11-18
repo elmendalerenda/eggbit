@@ -49,9 +49,6 @@
                     <a href="#" id="btn_NewGame" data-icon="mario">New game</a>
                     <a href="#multiplayer" data-target="section" data-icon="tv">Multi player</a>
                     <a href="#highscores" data-target="section" data-icon="star">Highscores</a>
-                    <!--
-                    <a href="#Settings" data-target="section" data-icon="human">Settings</a>
-                    -->
                     <a href="#about" data-target="section" data-icon="human" class="mark">About...</a>
                 </nav>
                 <div class="copyright small">Copyright 2011. Tapquo Inc.</div>
@@ -92,10 +89,9 @@
             <div class="ground"></div>
 
             <div class="content">
-                <div id="time" class="progress"><div class="value"></div></div>
-
+                <div id="clock" class="progress"><div class="value"></div></div>
                 <div class="track">
-                    <div class="music error">
+                    <div class="music">
                         <div class="question"><img src="assets/images/app-question.png"></div>
                         <div class="result"></div>
                     </div>
@@ -141,7 +137,6 @@
 
             <div class="content">
                 <small class="small">Put any two of these folks in a room together and you'll get something great in return.</small>
-
             </div>
         </article>
     </section>
@@ -187,9 +182,11 @@
         </article>
     </section>
 
-
-
+    <!--
     <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+    -->
+    <script src="assets/javascripts/socket.io.js" type="text/javascript"></script>
+
     <!-- LungoJS (Production mode) -->
     <script src="lungo.js/lungo-1.0.1.packed.js"></script>
     <!-- LungoJS (Sugars) -->
