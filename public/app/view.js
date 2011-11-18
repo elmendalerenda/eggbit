@@ -18,6 +18,7 @@ App.View = (function(lng, app, undefined) {
     };
 
     var _showTrack = function(data) {
+        console.error(data);
         var opt_1 = app.Core.getTrackById(data.opt_1);
         var opt_2 = app.Core.getTrackById(data.opt_2);
         var opt_3 = app.Core.getTrackById(data.opt_3);
