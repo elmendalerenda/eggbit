@@ -15,6 +15,8 @@ var App = (function(lng, undefined) {
     };
 
     var newGame = function() {
+        App.Services.newGame();
+
         //@ToDo:
         //var track = app.Data.track(2);
         //loadTrack();

@@ -9,10 +9,19 @@ App.View = (function(lng, app, undefined) {
     };
 
     var loadTrack = function(data) {
+        //@ToDo
         lng.Dom.query('.track').removeClass('unload');
         setTimeout(function(){
             lng.Dom.query('.track').addClass('load');
         }, 100);
+    };
+
+    var game = function() {
+        progress('game', '100');
+        lng.Dom.query('.life .heart').removeClass('die');
+
+
+        lng.Router.section('game');
     };
 
     //Auto-start
@@ -22,6 +31,7 @@ App.View = (function(lng, app, undefined) {
 
     return{
         progress: progress,
+        game: game,
         loadTrack: loadTrack,
         unloadTrack: unloadTrack
     }

@@ -4,16 +4,16 @@ App.Events = (function(lng, app, undefined) {
     });
 
     lng.Dom.Event.live('#btn_createMultiplayer', 'TAP', function(event) {
-
+    	app.Services.createMultiplayer(1);
     });
 
     lng.Dom.Event.live('#btn_connectMultiplayer', 'TAP', function(event) {
     	var challenge_pin = lng.Dom.query('#txt_challengePin').val();
 
     	if (challenge_pin) {
-			app.Services.connectMultiplayer();
+			app.Services.connectMultiplayer(challenge_pin);
     	} else {
-    		alert('No')
+    		lng.Sugar.Growl.show('What Pin?', 'monkey', true, 2);
     	}
     });
 
