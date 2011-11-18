@@ -1,6 +1,6 @@
 var App = (function(lng, undefined) {
 
-
+    var current_track = 0;
 
     //Define your LungoJS Application Instance
     lng.App.init({

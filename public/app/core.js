@@ -1,5 +1,7 @@
 App.Core = (function(lng, app, undefined) {
 
+    var current_track = 0;
+
 	_init = (function() {
 		//@ToDo >> Conectar con server
         setTimeout(function(){
