@@ -22,8 +22,17 @@ App.Core = (function(lng, app, undefined) {
         }, 300);
     };
 
-    var checkChoice = function() {
-        //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
+    var checkChoice = function(track_id) {
+        var track = lng.Data.Cache.get('track');
+        console.error('PRUEBA');
+        console.error(track);
+
+        if (track.id === track_id) {
+            //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
+        } else {
+            //@ToDo >> Si falla, no sumar puntos
+        }
+        nextTrack();
     };
 
     var nextTrack = function() {

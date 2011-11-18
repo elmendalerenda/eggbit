@@ -20,7 +20,9 @@ App.Events = (function(lng, app, undefined) {
     });
 
     lng.Dom.Event.bind('.choices a', 'TAP', function(event) {
-		app.Core.nextTrack();
+        var track_id = lng.Dom.query(this).data('track');
+        alert(track_id);
+		//app.Core.nextTrack();
     });
 
     lng.Dom.Event.live('.sound', 'TAP', function(event) {
