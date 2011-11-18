@@ -30,7 +30,9 @@ App.View = (function(lng, app, undefined) {
         lng.Dom.query('.track').addClass('load');
 
         app.music(track.music);
-        _startClock();
+
+        setInterval(_startClock(), 10000);
+        //_startClock();
     };
 
     var _startClock = function() {
