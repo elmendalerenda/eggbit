@@ -1,4 +1,5 @@
 var sio = require('socket.io');
+var helpers = require('./helpers.io');
 exports.scores = {};
 
 exports.start = function(app) {
@@ -32,28 +33,7 @@ exports.start = function(app) {
     });
     
     socket.on('startGame', function (aRoom) {
-      var game = [];
-      var questions = [];
-      
-      for(var i =0; i < 20; i += 1){
-        var id = randomInAnArray(questions)
-        questions.push(id);
-        
-        var answers = [id];
-        answers.push(randomInAnArray(answers));
-        answers.push(randomInAnArray(answers));
-        
-        answers.sort(function(){
-          return Math.random() > 0.5
-        });
-
-        var question = {};
-        question[id] = answers;
-        
-        game.push(question);
-      }
-      
-      console.log(game)
+      var game = helpers.createGame();
       
       broadcast(aRoom, 'starting', game);
     });
