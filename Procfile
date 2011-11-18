@@ -1,1 +1,0 @@
-web: node server_side/eggbitd.js
