@@ -31,8 +31,8 @@ App.View = (function(lng, app, undefined) {
 
         app.music(track.music);
 
-        setInterval(_startClock(), 10000);
-        //_startClock();
+        //setInterval(_startClock(), 10000);
+        _startClock();
     };
 
     var _startClock = function() {

@@ -4,10 +4,11 @@ App.Core = (function(lng, app, undefined) {
     var repository = [];
 
 	_init = (function() {
+
 		//@ToDo >> Conectar con server
         setTimeout(function(){
-	        app.View.progress('loading', '20');
-	        app.Data.getRepository();
+            app.View.progress('loading', '20');
+	        app.Services.checkVersion();
 	    }, 500);
 	})();
 
