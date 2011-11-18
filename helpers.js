@@ -31,7 +31,7 @@ var randomInAnArray = function(list) {
     var numQuestions = 5;
     var number = Math.floor(Math.random() * numQuestions);
 
-    while (list.indexOf(number) > -1) {
+    while (list.indexOf(number) > -1 || number == 0) {
         number = Math.floor(Math.random() * numQuestions);
     }
     return number;
