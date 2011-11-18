@@ -26,15 +26,13 @@ App.Core = (function(lng, app, undefined) {
     var checkChoice = function(track_id) {
         var track = lng.Data.Cache.get('track');
 
-        if (track.id === track_id) {
+        if (track.id == track_id) {
             //@ToDo >> Si la opcion seleccionada es la correcta: +PUNTOS y NEXT MUSIC
-            console.error('acierto');
             nextTrack();
         } else {
             //@ToDo >> Si falla, no sumar puntos
             lng.Dom.query('.music').addClass('error');
             setTimeout(function() {
-
                 lng.Dom.query('.music').removeClass('error');
                 app.Core.subtractLife();
                 nextTrack();
