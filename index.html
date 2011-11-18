@@ -46,8 +46,8 @@
             <div class="content menu">
                 <h1 class="logo"><img src="assets/images/icon-logo.png">eggBit</h1>
                 <nav class="game options">
-                    <a data-icon="mario">New game</a>
-                    <a data-icon="tv">Multi player</a>
+                    <a href="#" id="btn_NewGame" data-icon="mario">New game</a>
+                    <a href="#multiplayer" data-target="section" data-icon="tv">Multi player</a>
                     <a href="#highscores" data-target="section" data-icon="star">Highscores</a>
                     <a href="#about" data-target="section" data-icon="human">About...</a>
                 </nav>
@@ -88,6 +88,26 @@
         </article>
     </section>
 
+    <section id="multiplayer">
+        <header data-back="blue bomb">
+            <h1 class="title">Network <span class="mark">Multiplayer</span></h1>
+        </header>
+        <article>
+            <div class="sky"></div>
+            <div class="middle-ground" id="middle"></div>
+            <div class="ground"></div>
+
+            <div class="content">
+                <small class="small paragraph">You can create a new challenge with your friends. It is very easy, just have to press the button:</small>
+                <a href="#" id="btn_createMultiplayer" class="button big tall blue" data-icon="">Create a challenge</a>
+                <small class="paragraph"></small>
+                <small class="small paragraph">Do you want to connect to a challenge with your friends? Request to the creator of the challenge the <span class="mark">Challenge Pin</span> and start playing right now.</small>
+                <input id="txt_challengePin" type="text" placeholder="Challenge Pin" maxlength="6" />
+                <a href="#" id="btn_connectMultiplayer" class="button big tall orange" data-icon="">Connect</a>
+            </div>
+        </article>
+    </section>
+
     <section id="highscores">
         <header data-back="blue bomb">
             <h1 class="title">WorldTop <span class="mark">Highscores</span></h1>
@@ -98,6 +118,7 @@
             <div class="ground"></div>
 
             <div class="content">
+                <small class="small">Put any two of these folks in a room together and you'll get something great in return.</small>
 
             </div>
         </article>

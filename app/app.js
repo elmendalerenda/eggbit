@@ -14,9 +14,27 @@ var App = (function(lng, undefined) {
         lng.Sugar.Sound.background(music_url);
     };
 
+    var newGame = function() {
+        //@ToDo:
+        //var track = app.Data.track(2);
+        //loadTrack();
+
+        //setTimeout(function(){ app.View.progress('game', '99'); }, 100);
+        //setTimeout(function(){ app.View.loadTrack(); }, 300);
+        //setTimeout(function(){ app.Core.nextTrack(); }, 2000);
+        //return false;
+        lng.Router.section('game');
+    };
+
+    var multiPlayer = function() {
+
+    };
+
     return {
         sound: sound,
-        music: music
+        music: music,
+        newGame: newGame,
+        multiPlayer: multiPlayer
     };
 
 })(LUNGO);
