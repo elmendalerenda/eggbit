@@ -11,7 +11,7 @@ var App = (function(lng, undefined) {
     };
 
     var music = function(music_url) {
-        console.error(music_url);
+        console.error('music() >> ' + music_url);
         lng.Sugar.Sound.background(music_url);
     };
 
