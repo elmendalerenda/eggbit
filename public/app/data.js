@@ -2,7 +2,7 @@ App.Data = (function(lng, app, undefined) {
 
 	var table_tracks = {
         name: 'tracks',
-        drop: false,
+        drop: true,
     	fields: {
             id: 'INTEGER',
             name: 'TEXT',
@@ -54,8 +54,8 @@ App.Data = (function(lng, app, undefined) {
 	};
 
 	var saveRepository = function(data) {
-		for (var i = 0, len = tracks.length; i < len; i++ ) {
-			lng.Data.Sql.insert('tracks', tracks[i]);
+		for (var i = 0, len = data.length; i < len; i++ ) {
+			lng.Data.Sql.insert('tracks', data[i]);
 		}
 
 		app.Core.cacheRepository(data);

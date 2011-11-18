@@ -46,7 +46,6 @@ App.Core = (function(lng, app, undefined) {
     };
 
     var cachePlayer = function(data) {
-    	alert(data);
     	lng.Data.Cache.set('player', data);
     	app.View.progress('loading', '80');
 

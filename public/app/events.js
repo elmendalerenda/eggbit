@@ -5,7 +5,6 @@ App.Events = (function(lng, app, undefined) {
 
     lng.Dom.Event.live('#btn_createMultiplayer', 'TAP', function(event) {
         var player = lng.Data.Cache.get('player');
-        alert(player);
     	app.Services.createMultiplayer(player);
     });
 
@@ -13,7 +12,8 @@ App.Events = (function(lng, app, undefined) {
     	var challenge_pin = lng.Dom.query('#txt_challengePin').val();
 
     	if (challenge_pin) {
-			app.Services.connectMultiplayer(challenge_pin);
+            var player = lng.Data.Cache.get('player');
+			app.Services.connectMultiplayer(challenge_pin, player);
     	} else {
     		lng.Sugar.Growl.show('What Pin?', 'monkey', true, 2);
     	}

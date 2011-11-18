@@ -6,7 +6,7 @@ App.Services = (function(lng, app, undefined) {
 	var repository = function() {
 		lng.Service.get(server_url + 'tracks/all', {}, function(response) {
 			var tracks = response.tracks;
-			app.saveRepository(tracks);
+			app.Data.saveRepository(tracks);
 		});
 	};
 
@@ -20,6 +20,12 @@ App.Services = (function(lng, app, undefined) {
 		}, 100);
 	};
 
+	var saveScore = function(player, score) {
+		lng.Service.post(server_url + 'game', {player: player, score: score}, function(response) {
+			console.error(response);
+		});
+	};
+
 	var createMultiplayer = function(player, level) {
 		lng.Sugar.Growl.show('Creating', 'monkey', true);
 
@@ -27,20 +33,23 @@ App.Services = (function(lng, app, undefined) {
 		server_socket.emit('createRoom', player);
   		server_socket.on('roomCreated', function (token) {
   			lng.Data.Cache.set('multiplayer', token);
-    		//startGame();
-    		var data = {};
-			app.game(data);
+			//lng.Sugar.Growl.hide();
+
+			lng.Sugar.Growl.notify('Your Pin: ' + token, 'Pass to your friends', 'monkey', 'info', 10, function(){
+				lng.Sugar.Growl.hide();
+				lng.Router.section('game');
+			});
+
      	});
 	};
 
-	var connectMultiplayer = function(challenge_pin) {
+	var connectMultiplayer = function(challenge_pin, player) {
 		lng.Sugar.Growl.show('Connecting', 'monkey', true);
 
-		//@ToDo >> Conectar a la multiplayer (si estas online)
-		setTimeout(function(){
-			var data = {};
-			app.game(data);
-		}, 2000);
+ 		server_socket.emit('join', {room: challenge_pin, player: player});
+ 		server_socket.on('joined', function (newPlayer) {
+        	//startGame();
+     	});
 	};
 
 	var _init = (function() {
@@ -50,6 +59,7 @@ App.Services = (function(lng, app, undefined) {
     return {
     	repository: repository,
     	newGame: newGame,
+    	saveScore: saveScore,
     	createMultiplayer: createMultiplayer,
     	connectMultiplayer: connectMultiplayer
     }
